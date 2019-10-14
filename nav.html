@@ -1,0 +1,155 @@
+<!Doctype html>
+<html>
+<head>
+	<title>MY css site</title>
+	<link rel="stylesheet" href="navstyle.css">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	<!-- fonawesome cdn -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- <a href="https://icons8.com/icon/23028/html-5"></a> -->
+	<link rel="icon" href="https://img.icons8.com/ios-filled/50/000000/portfolio.png" type="image/gif">
+
+	<style>
+		.modal-backdrop{
+			width: 100% !important;
+			z-index: -1 !important; 
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container-fluid p-0 sticky-top">
+
+		<nav class="sticky-top">       
+			<ul class="top" id="dropclick">
+				<li ><a class="active" href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#skills">Skills</a> </li>
+				<li><a href="#portfolio">Portfolio</a></li>
+				<li><a href="#contact">Contact</a></li>
+
+
+				<li><a data-toggle="modal" data-target="#myModal" style="transition: width 2s, height 2s, transform 5s;">
+					<span style="color: white;"> Keep In Touch </span>
+				</a></li>
+
+				<li class="dropicon" ><a href="javascript:void(0);" onclick="dropMenu()" >&#9776; <i class="fa fa-user" style="font-size: 21px; color:white; margin-right:0px;"></i></a></li>
+			</ul>
+
+
+
+			<!-- The Modal -->
+			<div class="modal" id="myModal" style=" transform: (180deg);">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content">
+
+						<!-- Modal Header -->
+						<div class="modal-header">
+							<h4 class="modal-title">Keep In Touch</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+
+						<!-- Modal body -->
+						<div class="modal-body">
+							<form  onsubmit="return checkForm(this);"method="post">
+
+								<fieldset>
+									<legend>Ask Query</legend>
+									
+									<textarea rows="4" cols="30">
+										Write Here...
+									</textarea>
+									<br/><br/>
+									Email:
+									<input type="text"  name="email">&nbsp;<span id="i4" style="color:red;"></span><br/><br/>
+									<input type="submit" value="Submit" id="clicked">
+								</fieldset>
+
+							</form>
+							
+						</div>
+
+						<!-- Modal footer -->
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+		</nav>
+	</div>
+
+	<script>
+
+		function dropMenu(){
+			var x=document.getElementById("dropclick");
+			if(x.className === "top"){
+				x.className += " responsive";
+				/* change top to top.responsive  */
+
+			}
+			else{
+				x.className="top";
+
+			}
+		}
+
+		function checkForm(form)
+  {
+  	if(form.email.value == "") {
+	  document.getElementById("i4").innerHTML="Email cannot be blank";
+      form.email.focus();
+      return false;
+    }
+	else
+	document.getElementById("i4").innerHTML="";
+
+	re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if(!re.test(form.email.value)) {
+      document.getElementById("i4").innerHTML="Error: Enter a valid Email id.";
+        form.email.focus();
+        return false;
+      }
+	  else document.getElementById("i4").innerHTML="";
+
+  }
+
+	</script> 
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+	$('#clicked').click(function()
+	{
+
+		swal({
+  title: "Good job!",
+  text: "You clicked the button!",
+  icon: "success",
+});
+	});
+
+</script>
+
+</body>
+
+
+
+</html>

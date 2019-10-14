@@ -1,0 +1,303 @@
+/*..............defaults...........*/
+
+nav,
+header,
+footer {
+display:block;
+}
+
+body{
+line-height: 1;
+margin:0;
+background-color:#f8f0f0;
+}
+
+.container{
+width:100%;
+margin:auto;
+padding-top:4%;
+padding-bottom: 4%;
+background: linear-gradient(to right, #2d7979,white); 
+}
+
+/*...................nav bar..........*/
+
+
+nav{
+width:100%;
+margin:0;     /* edge to edge */
+
+}
+
+nav ul
+{
+
+background-color:teal;
+overflow:hidden;
+margin:0;
+padding: 0;
+}
+
+nav ul.top li {
+list-style: none;
+float:left;
+
+}
+nav ul.top li.top-right{
+float: right;
+}
+
+nav ul.top li a{
+text-decoration:none;
+display: block;
+/* same as below font-size:16px;*/
+min-height: 16px;   /*shrink */
+text-align: center;
+padding: 14px;
+text-transform: uppercase;
+color:white;
+
+}
+a{
+transition: 0.5s;
+}
+
+nav ul.top li a:hover{
+
+background: coral;
+
+
+}
+
+
+
+/*...............Mobile.........*/
+ul.top li.dropicon
+{
+display: none;  /* hide unicode from dekstop*/
+}
+
+@media screen and (max-width:600px){
+
+ul.top li:not(:nth-child(6))   {                /*hide all links except home when shrink*/
+
+display:none;  
+}
+
+
+ul.top li.dropicon 
+{
+display:block;
+float:right;
+}
+
+ul.top.responsive li.dropicon{
+position:absolute;
+top:0;
+right:0;
+
+}
+
+/*  still inherit all previous <a> properties ,lets change */
+
+ul.top .responsive{
+position:relative;
+} 
+ul.top.responsive li{
+display:inline;
+float:none;
+
+}
+ul.top.responsive li a{
+display:block; 
+text-align: left;
+
+}
+
+}
+
+
+
+.marq{
+
+background: linear-gradient( cyan,#2d7979); 
+
+}
+
+
+.headedit{
+margin-left: 180px;
+color:white;
+font-size:50px;
+text-shadow: 3px 4px 5px rgb(244, 63, 63);
+// border:3px dotted green;    
+}
+
+
+.formedit{
+
+margin-left:100px;
+}
+
+.formtxt{
+color:white;   
+}
+
+.frame{
+margin-left: 50%;
+margin-top:-25%;
+}
+
+
+
+label{
+font-size:20px;
+font-weight: bold;
+}
+
+.box1{
+
+border:1px solid skyblue;
+width:30%;
+padding:36px 24px 40px 24px;
+line-height: 19px;
+margin:24px;
+}
+.box2{
+
+border:1px solid skyblue;
+width:30%;
+padding:36px 24px 40px 24px;
+line-height: 19px;
+margin:24px;
+}
+.box3{
+
+border:1px solid skyblue;
+width:30%;
+margin:24px;
+line-height: 19px;
+padding:36px 24px 40px 24px;
+}
+
+.buttonedit{
+display: block;
+margin:auto;
+background: #2d7979;
+font-size:30px;
+border-radius: 26px; 
+/*    give circle at edges*/
+color:white;
+padding:7px;
+
+
+}
+
+.row{
+width:100%;
+display:flex;
+// flex-wrap:wrap;
+//align-items: center;
+
+}
+
+.row::after{
+
+display:table;
+clear:both;
+content:"";
+}
+
+.col-1{
+width:8.33%;
+}
+.col-2{
+width:16.66%;
+}
+.col-3{
+width:25%;
+}
+.col-4{
+width:33.33%;
+}
+.col-5{
+width:41.66%;
+}
+.col-6{
+width:50%;
+}
+.col-7{
+width:58.33%;
+}
+.col-8{
+width:66.66%;
+}
+.col-9{
+width:75%;
+}
+.col-10{
+width:88.33%;
+}
+.col-11{
+width:91.66%;
+}
+.col-12{
+width:100%;
+}
+
+
+footer.footedit{
+//    background: linear-gradient( rgb(244, 63, 63),#2d7979); 
+background-color:#2d7979;
+// background-color:rgb(244, 63, 63);
+}
+
+footer.footedit h1{
+color:white;
+}
+
+footer.footedit ul{
+list-style: none;
+text-align: left;
+padding-left: 0px;
+margin-left: 5px;
+
+
+}
+footer.footedit ul li{
+color:white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
